@@ -7,7 +7,6 @@ import { ChevronDown } from 'lucide-react'
 export function HeroSection() {
   const { scrollY } = useScroll()
   const y = useTransform(scrollY, [0, 1000], [0, -300])
-  const opacity = useTransform(scrollY, [0, 500], [1, 0])
   const scale = useTransform(scrollY, [0, 300], [1, 1.1])
 
   const [ref, inView] = useInView({
@@ -17,26 +16,35 @@ export function HeroSection() {
 
   return (
     <section ref={ref} className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Parallax */}
+      {/* Background Video - Fixed position */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="/_title_padel_202508021759_ginj5.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      
+      {/* Permanent dark overlay */}
+      <div className="absolute inset-0 bg-black/60 z-10" />
+      
+      {/* Content with Parallax */}
       <motion.div
         style={{ y, scale }}
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-20"
       >
-        <img
-          src="https://ext.same-assets.com/3039044760/2381775608.jpeg"
-          alt="Ice climbing expedition"
-          className="w-full h-[120%] object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50" />
-      </motion.div>
 
       {/* BAIKAL Text with enhanced animation */}
       <motion.div
-        style={{ opacity }}
         initial={{ opacity: 0, scale: 0.8, y: 50 }}
         animate={inView ? { opacity: 1, scale: 1, y: 0 } : {}}
         transition={{ duration: 1.5, ease: [0.6, -0.05, 0.01, 0.99] }}
-        className="relative z-10 text-center"
+        className="relative z-10 text-center mt-72"
       >
         <motion.h1
           className="text-8xl md:text-[12rem] lg:text-[15rem] font-bold tracking-wider text-white/90"
@@ -49,7 +57,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 50 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="inline-block hover:text-orange-400 transition-colors duration-300"
+              className="inline-block hover:text-[rgba(200,200,200,0.15)] transition-colors duration-300"
             >
               {letter}
             </motion.span>
@@ -70,11 +78,11 @@ export function HeroSection() {
         >
           <div className="relative">
             <img
-              src="https://ext.same-assets.com/3039044760/2190888751.jpeg"
-              alt="Dani Arnold"
+              src="/_DSC9091.jpg"
+              alt="Diogo Cheng"
               className="w-12 h-12 rounded-full object-cover border-2 border-white/50"
             />
-            <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-orange-500 rounded-full border-2 border-white"></div>
+            <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white"></div>
           </div>
           <div>
             <p className="text-sm font-medium">Diogo Cheng</p>
@@ -97,21 +105,27 @@ export function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 2 }}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 cursor-pointer"
-        onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+        onClick={() => {
+          const profileSection = document.getElementById('experience');
+          if (profileSection) {
+            const offset = profileSection.offsetTop - 82; // 100px above the section
+            window.scrollTo({ top: offset, behavior: 'smooth' });
+          }
+        }}
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
           className="flex flex-col items-center space-y-2 group"
         >
-          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center group-hover:border-orange-400 transition-colors">
+          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center group-hover:border-blue-400 transition-colors">
             <motion.div
               animate={{ y: [0, 16, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="w-1 h-3 bg-white/50 rounded-full mt-2 group-hover:bg-orange-400 transition-colors"
+              className="w-1 h-3 bg-white/50 rounded-full mt-2 group-hover:bg-blue-400 transition-colors"
             />
           </div>
-          <ChevronDown className="w-4 h-4 text-white/50 group-hover:text-orange-400 transition-colors" />
+          <ChevronDown className="w-4 h-4 text-white/50 group-hover:text-blue-400 transition-colors" />
         </motion.div>
       </motion.div>
 
@@ -140,6 +154,7 @@ export function HeroSection() {
           delay: 1
         }}
       />
+      </motion.div>
     </section>
   )
 }

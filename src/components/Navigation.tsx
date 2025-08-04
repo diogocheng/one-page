@@ -31,7 +31,7 @@ export function Navigation() {
     <>
       {/* Scroll Progress Bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-orange-500 origin-left z-50"
+        className="fixed top-0 left-0 right-0 h-1 bg-blue-500 origin-left z-50"
         style={{ scaleX: scrollYProgress }}
       />
 
@@ -60,42 +60,42 @@ export function Navigation() {
           <div className="hidden md:flex items-center space-x-8 text-sm font-light">
             <motion.button
               onClick={() => scrollToSection('experience')}
-              className="hover:text-orange-500 transition-colors relative group"
+              className="hover:text-blue-400 transition-colors relative group"
               whileHover={{ y: -2 }}
             >
               Experience
               <motion.div
-                className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"
+                className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"
               />
             </motion.button>
             <motion.button
               onClick={() => scrollToSection('technology')}
-              className="hover:text-orange-500 transition-colors relative group"
+              className="hover:text-blue-400 transition-colors relative group"
               whileHover={{ y: -2 }}
             >
               Locations
               <motion.div
-                className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"
+                className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"
               />
             </motion.button>
             <motion.button
               onClick={() => scrollToSection('discover')}
-              className="hover:text-orange-500 transition-colors relative group"
+              className="hover:text-blue-400 transition-colors relative group"
               whileHover={{ y: -2 }}
             >
               Gear
               <motion.div
-                className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"
+                className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"
               />
             </motion.button>
             <motion.button
               onClick={() => scrollToSection('watch')}
-              className="hover:text-orange-500 transition-colors relative group"
+              className="hover:text-blue-400 transition-colors relative group"
               whileHover={{ y: -2 }}
             >
               Library
               <motion.div
-                className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"
+                className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"
               />
             </motion.button>
           </div>
@@ -149,28 +149,28 @@ export function Navigation() {
           <div className="pt-6 space-y-4">
             <motion.button
               onClick={() => scrollToSection('experience')}
-              className="block w-full text-left hover:text-orange-500 transition-colors"
+              className="block w-full text-left hover:text-blue-400 transition-colors"
               whileHover={{ x: 10 }}
             >
               Experience
             </motion.button>
             <motion.button
               onClick={() => scrollToSection('technology')}
-              className="block w-full text-left hover:text-orange-500 transition-colors"
+              className="block w-full text-left hover:text-blue-400 transition-colors"
               whileHover={{ x: 10 }}
             >
               Technology
             </motion.button>
             <motion.button
               onClick={() => scrollToSection('discover')}
-              className="block w-full text-left hover:text-orange-500 transition-colors"
+              className="block w-full text-left hover:text-blue-400 transition-colors"
               whileHover={{ x: 10 }}
             >
               Discover
             </motion.button>
             <motion.button
               onClick={() => scrollToSection('watch')}
-              className="block w-full text-left hover:text-orange-500 transition-colors"
+              className="block w-full text-left hover:text-blue-400 transition-colors"
               whileHover={{ x: 10 }}
             >
               Watch

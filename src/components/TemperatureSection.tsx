@@ -14,11 +14,11 @@ export function TemperatureSection() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://ext.same-assets.com/3039044760/2890122550.webp"
-          alt="Dani Arnold walking on ice at sunrise"
-          className="w-full h-full object-cover"
+          src="/padeu2.jpg"
+          alt="Padel tournament"
+          className="w-full h-full object-cover object-bottom"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+        <div className="absolute inset-0 bg-black/60" />
       </div>
 
       {/* Temperature Display */}
@@ -54,8 +54,9 @@ export function TemperatureSection() {
                 transition={{ duration: 1, delay: 1 }}
                 className="text-center"
               >
-                <div className="text-6xl font-bold mb-2">-40°</div>
-                <div className="text-xl font-light">celsius</div>
+                <div className="text-6xl font-bold mb-2">21</div>
+                <div className="text-xl font-light">Times Played</div>
+                <div className="text-xl font-light">August</div>
               </motion.div>
             </div>
           </motion.div>
@@ -67,9 +68,9 @@ export function TemperatureSection() {
         initial={{ opacity: 0, y: 50 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, delay: 1.2 }}
-        className="absolute bottom-20 left-6 md:left-12 text-white z-10"
+        className="absolute bottom-32 left-6 md:left-12 text-white z-10"
       >
-        <p className="text-lg">Wind speeds up to 120 km/h on the ice.</p>
+        <p className="text-lg">Diogo has played 21 times in the month of August</p>
       </motion.div>
 
       {/* Technical Data */}
@@ -77,12 +78,12 @@ export function TemperatureSection() {
         initial={{ opacity: 0, y: 50 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, delay: 1.4 }}
-        className="absolute bottom-20 right-6 md:right-12 text-white z-10 text-right"
+        className="absolute bottom-32 right-6 md:right-12 text-white z-10 text-right"
       >
         <div className="space-y-2 text-sm font-mono">
-          <div>GPS: N64°49'15"</div>
-          <div>TMP: -14°C</div>
-          <div>BPM: 79</div>
+          <div>67% Win Rate in August</div>
+          <div>Biggest Streak of 6 games in a row</div>
+          <div>Has played the most in Douro Padel</div>
         </div>
       </motion.div>
     </section>

@@ -6,8 +6,10 @@ import { Navigation } from '@/components/Navigation'
 import { HeroSection } from '@/components/HeroSection'
 import { ProfileSection } from '@/components/ProfileSection'
 import { TemperatureSection } from '@/components/TemperatureSection'
+import PowerBIAnalytics from '@/components/PowerBIAnalytics'
 import { ProductSection } from '@/components/ProductSection'
 import { IceClimbingSection } from '@/components/IceClimbingSection'
+import LibrarySection from '@/components/LibrarySection'
 import { FinalSection } from '@/components/FinalSection'
 
 export default function Home() {
@@ -19,6 +21,8 @@ export default function Home() {
       <HeroSection />
       <ProfileSection />
       <TemperatureSection />
+      <LibrarySection />
+      <PowerBIAnalytics />
       <ProductSection />
       <IceClimbingSection />
       <FinalSection />

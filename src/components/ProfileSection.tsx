@@ -12,7 +12,7 @@ export function ProfileSection() {
   return (
     <section id="experience" ref={ref} className="py-20 bg-gray-50 text-black">
       <div className="container mx-auto px-6 md:px-12">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Left Image */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -20,13 +20,12 @@ export function ProfileSection() {
             transition={{ duration: 0.8 }}
           >
             <img
-              src="https://ext.same-assets.com/3039044760/4128589952.webp"
-              alt="Thick ice covering Lake Baikal"
+              src="/_DSC9091.jpg"
+              alt="Diogo Cheng123"
               className="w-full h-80 object-cover rounded-lg"
             />
             <p className="text-sm text-gray-600 mt-4 italic">
-              The thick ice covering the deepest lake on earth offers a mesmerizing,
-              crystal-clear view into its depths.
+              Padeu Tournament with Filipe Zhu M5
             </p>
           </motion.div>
 
@@ -37,28 +36,30 @@ export function ProfileSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-8"
           >
-            <h2 className="text-4xl font-bold">Dani Arnold</h2>
+            <h2 className="text-4xl font-bold">Diogo Cheng</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div>
-                <p className="text-sm text-gray-600 mb-1">Pro Team Mountaineering</p>
-                <p className="font-medium">One of the top Swiss speed climbers</p>
+                <p className="text-sm text-gray-600 mb-1">Real Life Job</p>
+                <p className="font-medium">I do what it takes</p>
               </div>
               <div>
                 <p className="text-sm text-gray-600 mb-1">Date of Birth</p>
-                <p className="font-medium">22 Feb 1984</p>
+                <p className="font-medium">23 Oct 2002</p>
               </div>
               <div>
-                <p className="text-sm text-gray-600 mb-1">At Mammut since</p>
-                <p className="font-medium">2011</p>
+                <p className="text-sm text-gray-600 mb-1">Playing since</p>
+                <p className="font-medium">2024</p>
               </div>
             </div>
 
             <div className="pt-8">
               <p className="text-lg leading-relaxed text-gray-700">
-                Too cold to climb? See how he transitions to the horizontal ice and conquers
-                ten new ice routes in temperatures as low as -40°C.
+              Hey, I’m Diogo, a Data Engineer who enjoys building clean, purposeful experiences.
+              I built this to give people a space to create their own personal hobbies page — something we call a One Page. It’s all about helping users express what they’re passionate about in a clean, focused way.
               </p>
+              
+
             </div>
           </motion.div>
         </div>
